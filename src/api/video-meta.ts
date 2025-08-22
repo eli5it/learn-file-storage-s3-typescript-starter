@@ -63,5 +63,9 @@ export async function handlerVideosRetrieve(cfg: ApiConfig, req: Request) {
   const userID = validateJWT(token, cfg.jwtSecret);
 
   const videos = getVideos(cfg.db, userID);
-  return respondWithJSON(200, videos);
+  const mappedVideos = videos.map((vid) => ({
+    ...vid,
+    thumbnailURL: `http://localhost:8091/${vid.thumbnailURL}`,
+  }));
+  return respondWithJSON(200, mappedVideos);
 }
