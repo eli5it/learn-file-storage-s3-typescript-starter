@@ -10,7 +10,8 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/bun": "^1.2.7",
-    "@types/jsonwebtoken": "^9.0.9"
+    "@types/jsonwebtoken": "^9.0.9",
+    "bun-types": "^1.2.20"
   },
   "peerDependencies": {
     "typescript": "^5"
